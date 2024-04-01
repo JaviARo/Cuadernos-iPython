@@ -1,0 +1,4 @@
+1. OLVIDARSE DE LA PARTE DE CARGA DE DATOS LO MÁXIMO POSIBLE
+2. Utilizar datos de validación
+3. Data augmentation
+4. Utilizar filtros
