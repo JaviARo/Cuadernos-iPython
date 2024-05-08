@@ -1,0 +1,14 @@
+path: ../food_dataset
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 68
+names: ['asian_noodles', 'bacon', 'bagel', 'beans', 'beef', 'biscuit', 'black_beans', 'bread', 'bread_crust', 'broccoli', 'bun', 'burger', 'burger_patty', 'carrots', 'cauliflower', 'cereal', 'chicken', 'corn', 'croutons', 'cucumber', 'curry', 'dessert', 'donut', 'fish', 'fried_chicken', 'fries', 'fruit', 'green_beans', 'hardboiled_egg', 'hash', 'hot_dog', 'lentils', 'lettuce', 'mashed_potato', 'meatball', 'meatless_chicken_tender', 'muffin', 'naan', 'oatmeal', 'omelette', 'onions', 'pasta', 'peas', 'peppers', 'pickle', 'pizza', 'pizza_crust', 'pork', 'potato', 'quinoa', 'ribs', 'rice', 'rice_mix', 'salad', 'sausage', 'scrambled_eggs', 'soup', 'sweet_potato', 'taco', 'taco_mix', 'toast', 'tofu', 'tomato', 'unknown', 'vegetables', 'waffle', 'wings', 'yams']
+
+roboflow:
+  workspace: willagenov
+  project: 11-6
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/willagenov/11-6/dataset/1
