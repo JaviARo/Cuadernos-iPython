@@ -1,0 +1,85 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,900&display=swap');
+
+$mindaro: #cee397;
+$maya-blue: #79BEEE;
+$oxford-blue: #0A122A;
+$lavender: #D8D8F6;
+$dim-gray: #686963;
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, $mindaro, $maya-blue, $mindaro);
+  background-size: 400% 400%;
+  animation: backgroundAnimation 15s ease infinite;
+  
+  transition: opacity 0.3s ease-in-out;
+
+  h1, h2, p {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 400;
+    color: $oxford-blue;
+  }
+
+  h1 {
+    font-weight: 900;
+    animation: showTitle 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  h2 {
+    font-weight: 900;
+    color: $dim-gray;
+    animation: showSubtitle 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  #buttons {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: space-between;
+
+    .button {
+      background-color: $lavender;
+      border-radius: 10px;
+      width: 40%;
+      height: 20vh;
+    }
+  }
+}
+
+@keyframes backgroundAnimation {
+  0%, 100% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+}
+
+@keyframes showTitle {
+  0%, 50% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes showSubtitle {
+  0%, 33%, 66% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
