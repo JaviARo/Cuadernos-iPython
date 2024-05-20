@@ -11,7 +11,9 @@ body {
   animation: backgroundAnimation 15s ease infinite;
   transition: opacity 0.3s ease-in-out;
 }
-body h1, body h2, body p {
+body h1,
+body h2,
+body p {
   font-family: "Satoshi", sans-serif;
   font-weight: 400;
   color: #0A122A;
@@ -31,11 +33,43 @@ body #buttons {
   align-items: center;
   justify-content: space-between;
 }
-body #buttons .button {
-  background-color: #D8D8F6;
+body #buttons .button-container {
   border-radius: 10px;
   width: 40%;
   height: 20vh;
+  position: relative;
+  background-color: #686963;
+}
+body #buttons .button-container .button {
+  background-color: #0A122A;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform ease 0.3s;
+  position: absolute;
+}
+body #buttons .button-container .button:hover {
+  transform: translateY(-10px) translateX(-10px);
+  cursor: pointer;
+}
+body #buttons .button-container .button p {
+  font-weight: 900;
+  width: 80%;
+  text-align: center;
+  color: #D8D8F6;
+}
+body #buttons .button-container .button img {
+  width: 20%;
+}
+body #buttons #bc-1 {
+  animation: showButton1 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+body #buttons #bc-2 {
+  animation: showButton2 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 @keyframes backgroundAnimation {
@@ -63,6 +97,26 @@ body #buttons .button {
   }
   100% {
     transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes showButton1 {
+  0%, 75% {
+    transform: translateX(-5%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes showButton2 {
+  0%, 75% {
+    transform: translateX(5%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
     opacity: 1;
   }
 }/*# sourceMappingURL=style.css.map */
