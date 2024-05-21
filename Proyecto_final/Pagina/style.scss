@@ -3,6 +3,7 @@
 $mindaro: #cee397;
 $maya-blue: #79BEEE;
 $oxford-blue: #0A122A;
+$delft-blue: #16285c;
 $lavender: #D8D8F6;
 $dim-gray: #686963;
 
@@ -36,17 +37,20 @@ body {
     font-weight: 900;
     color: $dim-gray;
     animation: showSubtitle 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    text-align: center;
+  }
+
+  #subtitle {
+    width: 80%;
   }
 
   #buttons {
     display: flex;
-    width: 50%;
     align-items: center;
     justify-content: space-between;
 
     .button-container {
       border-radius: 10px;
-      width: 40%;
       height: 20vh;
       position: relative;
       background-color: $dim-gray;
@@ -78,7 +82,18 @@ body {
         img {
           width: 20%;
         }
+
+        input {
+          height: 100%;
+          width: 100%;
+          opacity: 0;
+          position: absolute;
+        }
       }
+    }
+
+    .draggable {
+      background-color: $delft-blue !important;
     }
 
     #bc-1 {
@@ -153,4 +168,61 @@ body {
     transform: translateX(0);
     opacity: 1;
   }
+}
+
+@mixin mediaQueries( 
+  $h1_font_size, 
+  $h2_font_size, 
+  $p_font_size, 
+  $button_width
+) {
+  h1 {
+    font-size: $h1_font_size
+  }
+
+  h2 {
+    font-size: $h2_font_size
+  }
+
+  p {
+    font-size: $p_font_size
+  }
+
+  #buttons {
+    width: $button_width
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  @include mediaQueries(32px, 20px, 12px, 80%);
+  #buttons {
+    flex-direction: column;
+
+    .button-container {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  @include mediaQueries(36px, 22px, 12px, 70%);
+  #buttons {
+    flex-direction: row;
+
+    .button-container {
+      width: 40%;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  @include mediaQueries(40px, 24px, 14px, 65%);
+}
+
+@media only screen and (min-width: 992px) {
+  @include mediaQueries(44px, 26px, 18px, 55%);
+}
+
+@media only screen and (min-width: 1200px) {
+  @include mediaQueries(48px, 28px, 20px, 50%);
 }
