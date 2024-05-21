@@ -7,7 +7,7 @@
     <link>
   </head>
   <body>
-    <h1>Rayos-X</h1>
+    <h1>FractureAI</h1>
     <h2 id="subtitle">¡Confíe en la Inteligencia Artificial para determinar si un hueso está fracturado!</h2>
     <div id="buttons">
       <div class="button-container" id="bc-1">
@@ -17,7 +17,7 @@
           <input type="file"/>
         </div>
       </div>
-      <h2>o</h2>
+      <h2 id="o">o</h2>
       <div class="button-container" id="bc-2">
         <div class="button">
           <p>Utilice su cámara para escanear la foto</p>
@@ -25,6 +25,12 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="script.js"></script>
+    <img id="image" class="disabled" src=""></img>
+    <canvas class="disabled" id="canvas"></canvas>
+    <video id="video" playsinline autoplay style="width: 1px;"></video>
+    <div id="resultado"></div> 
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+    <script type="text/javascript" src="./js/camera.js"></script>
   </body>
 </html>

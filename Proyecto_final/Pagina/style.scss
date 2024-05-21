@@ -1,5 +1,5 @@
-@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,900&display=swap');
-
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&display=swap');
 $mindaro: #cee397;
 $maya-blue: #79BEEE;
 $oxford-blue: #0A122A;
@@ -13,28 +13,27 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
   background: linear-gradient(135deg, $mindaro, $maya-blue, $mindaro);
   background-size: 400% 400%;
   animation: backgroundAnimation 15s ease infinite;
 
   transition: opacity 0.3s ease-in-out;
 
-  h1,
   h2,
   p {
     font-family: 'Satoshi', sans-serif;
-    font-weight: 400;
-    color: $oxford-blue;
   }
 
   h1 {
-    font-weight: 900;
+    color: $oxford-blue;
+    font-family: "Alegreya Sans SC", sans-serif;
+    font-weight: 500;
     animation: showTitle 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    margin-top: 15vh;
   }
 
   h2 {
-    font-weight: 900;
     color: $dim-gray;
     animation: showSubtitle 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     text-align: center;
@@ -48,6 +47,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 15vh;
 
     .button-container {
       border-radius: 10px;
@@ -73,7 +73,6 @@ body {
         }
 
         p {
-          font-weight: 900;
           width: 80%;
           text-align: center;
           color: $lavender;
@@ -103,7 +102,32 @@ body {
     #bc-2 {
       animation: showButton2 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
+
+    .hide-bc-1 {
+      animation: hideButton1 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    }
+
+    .hide-bc-2 {
+      animation: hideButton2 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    }
   }
+
+  #image,
+  #canvas {
+    width: 20vw;
+    height: 20vw;
+    max-width: 100%;
+    min-width: 250px;
+    min-height: 250px;
+    border: 5px solid $oxford-blue;
+    border-radius: 10px;
+    animation: showTitle 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    margin-top: 5vh;
+  }
+}
+
+.disabled {
+  display: none !important;
 }
 
 @keyframes backgroundAnimation {
@@ -170,6 +194,30 @@ body {
   }
 }
 
+@keyframes hideButton1 {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% { 
+    transform: translateX(-5%); 
+    opacity: 0; 
+  } 
+}
+
+@keyframes hideButton2 {
+  0% {
+    transform: translateX(5%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(5%);
+    opacity: 0;
+  }
+}
+
 @mixin mediaQueries( 
   $h1_font_size, 
   $h2_font_size, 
@@ -194,9 +242,10 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-  @include mediaQueries(32px, 20px, 12px, 80%);
+  @include mediaQueries(40px, 20px, 12px, 80%);
   #buttons {
     flex-direction: column;
+    margin-top: 5vh !important;
 
     .button-container {
       width: 100%;
@@ -205,7 +254,7 @@ body {
 }
 
 @media only screen and (min-width: 600px) {
-  @include mediaQueries(36px, 22px, 12px, 70%);
+  @include mediaQueries(44px, 22px, 12px, 70%);
   #buttons {
     flex-direction: row;
 
@@ -216,13 +265,13 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
-  @include mediaQueries(40px, 24px, 14px, 65%);
+  @include mediaQueries(48px, 24px, 14px, 65%);
 }
 
 @media only screen and (min-width: 992px) {
-  @include mediaQueries(44px, 26px, 18px, 55%);
+  @include mediaQueries(52px, 26px, 18px, 55%);
 }
 
 @media only screen and (min-width: 1200px) {
-  @include mediaQueries(48px, 28px, 20px, 50%);
+  @include mediaQueries(56px, 28px, 20px, 50%);
 }
